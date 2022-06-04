@@ -1,0 +1,23 @@
+{% comment %} heroku adjustment {% endcomment %}
+{% comment %} {% load thumbnail %} {% endcomment %}
+{% load cloudinary %}
+{% cloudinary_includes %}
+{% cloudinary_js_config %}
+
+{% for image in images %}
+  <div class="image">
+    <a href="{{ image.get_absolute_url }}">
+      {% comment %} heroku adjustment {% endcomment %}
+      {% comment %} {% thumbnail image.image 300x300 crop="smart" as im %}
+      <a href="{{ image.get_absolute_url }}">
+        <img src="{{ im.url }}">
+      </a> {% endcomment %}
+      {% cloudinary image.cloudinary_public_id width=300 height=300 crop="fill" %}
+    </a>
+    <div class="info">
+      <a href="{{ image.get_absolute_url }}" class="title">
+        {{ image.title }}
+      </a>
+    </div>
+  </div>
+{% endfor %}

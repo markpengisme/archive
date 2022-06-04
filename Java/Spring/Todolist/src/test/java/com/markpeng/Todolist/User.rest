@@ -1,0 +1,18 @@
+@resource = localhost:8080/api
+@token = eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyTmFtZSI6Im1hcmsiLCJleHAiOjE2MzQyMTc4MzV9.12YxzmHwvQRz3q0PrSvht-RuVteeFbkp3EXvaLhNj09tmzegp1HxjXJDX9tApwd-SuAW4DZnND-fUJ9EOeTemA
+@userid = 1
+
+### Login
+POST http://{{resource}}/token
+Content-Type: application/json
+
+{
+    "userName": "mark"
+}
+
+### Token test
+GET http://{{resource}}/token
+Authorization: Bearer {{token}}
+
+### Get all todos of the user
+GET http://{{resource}}/user/{{userid}}/todo

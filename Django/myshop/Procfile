@@ -1,0 +1,2 @@
+web: bin/start-nginx gunicorn --config gunicorn.heroku.py
+worker: celery -A myshop worker -l info --without-heartbeat --without-gossip --without-mingle

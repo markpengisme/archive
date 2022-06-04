@@ -1,0 +1,9 @@
+*.pyc
+__pycache__
+db.sqlite3
+.env
+ssl
+config/*
+!config/nginx.conf.erb
+logs/*
+!logs/celery.cloudamqp.log

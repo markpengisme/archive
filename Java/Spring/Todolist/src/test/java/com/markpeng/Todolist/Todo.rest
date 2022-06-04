@@ -1,0 +1,33 @@
+@resource = localhost:8080/api/todo
+@id = 1
+
+### Get all todos
+GET http://{{resource}} 
+
+### Get one todo
+GET http://{{resource}}//{{id}}
+
+### Post a todo
+POST http://{{resource}}
+Content-Type: application/json
+
+{
+    "task": "do homework",
+    "status": false
+}
+
+### Post a empty todo
+POST http://{{resource}}
+
+### Put a todo
+PUT http://{{resource}}//{{id}}
+Content-Type: application/json
+
+{
+    "task": "do homework",
+    "status": true
+}
+
+### Deleta a todo
+DELETE http://{{resource}}//{{id}}
+

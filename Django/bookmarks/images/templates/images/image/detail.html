@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% comment %} {% load thumbnail %} {% endcomment %}
+{% load cloudinary %}
+{% cloudinary_includes %}
+{% cloudinary_js_config %}
+
+{% block title %}{{ image.title }}{% endblock %}
+{% block content %}
+  <h1>{{ image.title }}</h1>
+  {% comment %} heroku adjustment {% endcomment %}
+  {% comment %} <a href="{{ image.image.url }}">
+    <img src="{% thumbnail image.image 300x0 %}" class="image-detail">
+  </a> {% endcomment %}
+  <a href="{{ image.cloudinary_secure_url }}">
+    {% cloudinary image.cloudinary_public_id width=300 crop="fill" class="image-detail" %}
+  </a>
+  {% with total_likes=image.users_like.count users_like=image.users_like.all %}
+    <div class="image-info">
+      <div>
+        <span class="count">
+          <span class="total">{{ total_likes }}</span>like{{ total_likes|pluralize }}
+        </span>
+        <span class="count">
+          {{ total_views }} view{{ total_views|pluralize }}
+        </span>
+        {% if request.user not in users_like %}
+          <a href="#" data-id="{{ image.id }}"
+             class="like button" data-action="like">Like</a>
+        {% else %}
+          <a href="#" data-id="{{ image.id }}"
+             class="like button" data-action="unlike">Unlike</a>
+        {% endif %}
+      </div>
+      {{ image.description|linebreaks }}
+    </div>
+    <div class="image-likes">
+      {% for user in users_like %}
+        <div>
+          {% if user.profile.photo %}
+            {% comment %} heroku adjustment {% endcomment %}
+            {% comment %} <img src="{{ user.profile.photo.url }}"> {% endcomment %}
+            {% cloudinary user.profile.photo width=80 height=80 crop="fill" %}
+          {% endif %}
+          <p>{{ user.first_name }}</p>
+        </div>
+      {% empty %}
+        Nobody likes this image yet.
+      {% endfor %}
+    </div>
+  {% endwith %}
+{% endblock %}
+{% block domready %}
+  $('a.like').click(function(e){
+    e.preventDefault()
+    $.post('{% url "images:like" %}',
+      {
+        id: $(this).data('id'),
+        action: $(this).data('action')
+      },
+      function(data){
+        if (data['status'] == 'ok')
+        {
+          var previous_action = $('a.like').data('action')
+          $('a.like').data('action',
+            previous_action == 'like' ? 'unlike' : 'like'
+          )
+          $('a.like').text(
+            previous_action == 'like' ? 'Unlike' : 'Like'
+          )
+          var previous_likes = parseInt($('span.count .total').text())
+          $('span.count .total').text(
+            previous_action == 'like' ? 
+              previous_likes + 1 : previous_likes - 1
+          )
+        }
+      }
+    )
+  })
+{% endblock %}

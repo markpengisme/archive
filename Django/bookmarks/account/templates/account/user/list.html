@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% comment %} heroku adjustment {% endcomment %}
+{% comment %} {% load thumbnail %} {% endcomment %}
+{% load cloudinary %}
+{% cloudinary_includes %}
+{% cloudinary_js_config %}
+
+{% block title %}People{% endblock %}
+{% block content %}
+  <h1>People</h1>
+  <div id="people-list">
+    {% for user in users %}
+      <div class="user">
+        <a href="{{ user.get_absolute_url }}">
+          {% comment %} heroku adjustment {% endcomment %}
+          {% comment %} <img src="{% thumbnail user.profile.photo 180x180 %}"> {% endcomment %}
+          {% cloudinary user.profile.photo width=180 height=180 crop="fill" %}
+        </a>
+        <div class="info">
+          <a href="{{ user.get_absolute_url }}" class="title">
+            {{ user.get_full_name }}
+          </a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

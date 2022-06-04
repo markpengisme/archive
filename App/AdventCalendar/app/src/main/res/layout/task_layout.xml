@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This linear layout contains a single item in the list of tasks displayed in the MainActivity
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="70dp"
+    android:orientation="vertical"
+    tools:context="com.example.android.adventcalendar.MainActivity"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:weightSum="1">
+
+    <!--
+        This horizontal linear layout displays the description and priority of a task
+        in a single horizontal line
+    -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:background="@android:color/white"/>
+    <LinearLayout
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingTop="16dp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="16dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_gravity="center"
+        android:background="@drawable/itemshape"
+        android:layout_weight="0.8">
+
+        <!-- TextView that displays the description of a task -->
+        <TextView
+            android:id="@+id/taskDescription"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            style="@style/TextAppearance.AppCompat.Medium" />
+
+        <!-- An empty view for spacing out the description and priority views -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/dayView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:background="@drawable/description"
+            />
+
+
+</LinearLayout>
+    <!-- A gray divider line at the bottom of each task -->
+</LinearLayout>
+
+

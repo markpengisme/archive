@@ -1,0 +1,3 @@
+[submodule "Web/Django/fileAPI_CRUD"]
+	path = Web/Django/fileAPI_CRUD
+	url = git@github.com:markpengisme/fileAPI_CRUD.git

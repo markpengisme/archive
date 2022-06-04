@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  planefinder:
+    image: planefinder:0.0.1
+  aircraft-positions:
+    image: aircraft-positions:0.0.1
+    ports:
+      - 8080:8080

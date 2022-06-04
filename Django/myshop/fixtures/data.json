@@ -1,0 +1,178 @@
+[
+    {
+        "model": "shop.category",
+        "pk": 1,
+        "fields": { "name": "Tea", "slug": "tea" }
+    },
+    {
+        "model": "shop.category",
+        "pk": 2,
+        "fields": { "name": "Toy", "slug": "toy" }
+    },
+    {
+        "model": "shop.category",
+        "pk": 3,
+        "fields": { "name": "Food", "slug": "food" }
+    },
+    {
+        "model": "shop.product",
+        "pk": 1,
+        "fields": {
+            "category": 1,
+            "name": "Red tea",
+            "slug": "red-tea",
+            "image": "products/2021/11/14/red_tea.jpeg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas neque turpis, porttitor et dignissim et, mattis non risus. Curabitur dignissim id elit ac congue. Nunc quis consectetur quam. Donec vitae lorem nulla. Ut aliquam laoreet erat at fringilla. Phasellus nulla felis, dictum in placerat quis, gravida sit amet odio. Pellentesque at turpis diam. Vestibulum rutrum ultrices velit, a rhoncus enim pharetra aliquam. Integer vulputate maximus cursus. Vivamus bibendum massa eget libero interdum dapibus. In a leo est. Aliquam rutrum mauris id convallis iaculis. Maecenas ultricies dui vel nulla porttitor scelerisque.",
+            "price": "99.00",
+            "available": true,
+            "created": "2021-11-14T22:59:29.962Z",
+            "updated": "2021-11-14T22:59:29.962Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 2,
+        "fields": {
+            "category": 1,
+            "name": "Green Tea",
+            "slug": "green-tea",
+            "image": "products/2021/11/14/green_tea.jpeg",
+            "description": "In hac habitasse platea dictumst. Proin lacinia ipsum ac augue viverra tempus. Curabitur euismod maximus risus, id rutrum neque. Fusce elementum odio lacus, sit amet volutpat dolor scelerisque facilisis. Ut dapibus magna non orci posuere accumsan. Ut eget diam neque. Maecenas mollis felis at elit fermentum, sit amet congue nulla aliquet. Curabitur et velit erat. Duis urna ligula, elementum et magna sit amet, malesuada tempus justo. Vivamus eros nisl, semper et libero vitae, dignissim ullamcorper nibh. Nulla congue dolor porttitor rhoncus vulputate. Quisque dignissim consectetur ante, at scelerisque enim mattis et. Donec eu congue nisl. Donec in nunc a arcu malesuada convallis. Nunc vestibulum, enim feugiat vestibulum semper, ex ipsum pellentesque enim, ac faucibus erat dui at tortor.",
+            "price": "89.00",
+            "available": true,
+            "created": "2021-11-14T23:00:15.627Z",
+            "updated": "2021-11-14T23:00:15.627Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 3,
+        "fields": {
+            "category": 1,
+            "name": "Black Tea",
+            "slug": "black-tea",
+            "image": "products/2021/11/14/black_tea.jpeg",
+            "description": "Pellentesque venenatis arcu sit amet cursus lobortis. Fusce feugiat dignissim enim. Donec sagittis dui libero, laoreet aliquam mi feugiat id. Sed sem lacus, ultricies vitae nisi non, porttitor tempor lorem. Pellentesque euismod eget risus id aliquam. Curabitur vitae est dignissim, mollis justo quis, luctus dui. Vivamus lacinia fermentum porta. Nulla egestas at odio a blandit. Etiam id nibh non est congue fringilla eget non est. Vivamus porttitor erat eget ipsum iaculis, ut tincidunt ante vehicula. Morbi dignissim libero eget diam sodales, ac euismod massa semper. Nulla cursus porta felis, quis posuere ligula dignissim ac. Nulla lacinia risus et arcu faucibus luctus at ut dui. Vivamus blandit elit vel magna fringilla, sed facilisis urna laoreet. Proin efficitur velit id semper commodo. Pellentesque et felis sed mauris pellentesque viverra in non sem.",
+            "price": "109.00",
+            "available": true,
+            "created": "2021-11-14T23:00:50.042Z",
+            "updated": "2021-11-14T23:00:50.042Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 4,
+        "fields": {
+            "category": 1,
+            "name": "Tea powder",
+            "slug": "tea-powder",
+            "image": "products/2021/11/14/tea_powder.jpeg",
+            "description": "Praesent efficitur varius magna blandit facilisis. Nullam lacinia, sem in dictum bibendum, leo nibh suscipit metus, sit amet dignissim justo arcu vel orci. Nulla molestie volutpat pretium. Proin imperdiet nibh diam, tincidunt laoreet mauris vestibulum a. Morbi ut pharetra purus. Nullam vitae malesuada purus, in hendrerit leo. Donec luctus lectus at est condimentum tincidunt sit amet non sem. Donec mi tortor, dignissim eu erat vitae, auctor mollis tellus.",
+            "price": "299.00",
+            "available": true,
+            "created": "2021-11-14T23:01:29.066Z",
+            "updated": "2021-11-14T23:01:29.066Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 5,
+        "fields": {
+            "category": 3,
+            "name": "Pizza",
+            "slug": "pizza",
+            "image": "products/2021/11/14/pexels-pixabay-315755.jpg",
+            "description": "",
+            "price": "299.00",
+            "available": true,
+            "created": "2021-11-14T23:03:16.678Z",
+            "updated": "2021-11-14T23:03:16.678Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 6,
+        "fields": {
+            "category": 3,
+            "name": "Spaghetti",
+            "slug": "spaghetti",
+            "image": "products/2021/11/14/pexels-lisa-1279330.jpg",
+            "description": "",
+            "price": "329.00",
+            "available": true,
+            "created": "2021-11-14T23:03:59.900Z",
+            "updated": "2021-11-14T23:03:59.900Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 7,
+        "fields": {
+            "category": 3,
+            "name": "Salad",
+            "slug": "salad",
+            "image": "products/2021/11/14/pexels-julie-aagaard-2097090.jpg",
+            "description": "",
+            "price": "259.00",
+            "available": true,
+            "created": "2021-11-14T23:04:22.442Z",
+            "updated": "2021-11-14T23:04:22.442Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 8,
+        "fields": {
+            "category": 3,
+            "name": "Pancake",
+            "slug": "pancake",
+            "image": "products/2021/11/14/pexels-pixabay-357573.jpg",
+            "description": "",
+            "price": "249.00",
+            "available": true,
+            "created": "2021-11-14T23:04:59.458Z",
+            "updated": "2021-11-14T23:04:59.458Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 9,
+        "fields": {
+            "category": 2,
+            "name": "Cube",
+            "slug": "cube",
+            "image": "products/2021/11/14/pexels-miguel-Ã-padriÃÃn-19677.jpg",
+            "description": "",
+            "price": "199.00",
+            "available": true,
+            "created": "2021-11-14T23:05:43.358Z",
+            "updated": "2021-11-14T23:05:43.358Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 10,
+        "fields": {
+            "category": 2,
+            "name": "Testing",
+            "slug": "testing",
+            "image": "",
+            "description": "",
+            "price": "999.00",
+            "available": true,
+            "created": "2021-11-13T06:09:56.689Z",
+            "updated": "2021-11-13T06:09:56.689Z"
+        }
+    },
+    {
+        "model": "coupons.coupon",
+        "pk": 1,
+        "fields": {
+            "code": "Black-Friday-2021",
+            "valid_from": "2021-11-15T00:00:00Z",
+            "valid_to": "2022-01-01T00:00:00Z",
+            "discount": 25,
+            "active": true
+        }
+    }
+]

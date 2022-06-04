@@ -1,0 +1,10 @@
+*.pyc
+__pycache__
+db.sqlite3
+.env
+ssl
+config/*
+!config/nginx.conf.erb
+!config/uwsgi_params
+!config/uwsgi.heroku.ini
+logs/*
